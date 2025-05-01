@@ -1,0 +1,6 @@
+@LoggingBroker.WebApi_HostAddress = http://localhost:5168
+
+GET {{LoggingBroker.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

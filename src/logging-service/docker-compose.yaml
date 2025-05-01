@@ -1,0 +1,51 @@
+services:
+  loki:
+    image: grafana/loki:2.9.4
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    volumes:
+      - ./logging-loki/loki-config.yaml:/etc/loki/local-config.yaml
+      - loki-storage:/loki
+    user: "0"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./logging-grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    restart: unless-stopped
+    depends_on:
+      - loki
+
+  logging-broker:
+    build:
+      context: ./logging-broker
+      dockerfile: ../../../Dockerfile 
+    container_name: LoggingBrokerApi
+    volumes:
+      - nuget-packages:/root/.nuget/packages
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - loki
+    environment:
+    - LokiUrl=http://loki:3100
+    - ASPNETCORE_ENVIRONMENT=Development
+    - RateLimiterSettings__PermitLimit=100
+    - RateLimiterSettings__WindowTime=15
+    - RateLimiterSettings__QueueLimit=0
+    
+volumes:
+  loki-storage:
+  grafana-storage:
+  nuget-packages:

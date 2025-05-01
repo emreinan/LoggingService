@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E97B9A38-6BB6-44D1-9326-214E34F85BEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3359E346-5E7B-4B0C-B342-B20F7C3149EC}"
+	ProjectSection(SolutionItems) = preProject
+		docs\LoggingBrokerAPI – Request Documentation.md = docs\LoggingBrokerAPI – Request Documentation.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging-service", "logging-service", "{21A401A7-7AAA-4BE0-B61E-3479CA06761C}"
+	ProjectSection(SolutionItems) = preProject
+		src\logging-service\docker-compose.yaml = src\logging-service\docker-compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging-broker", "logging-broker", "{5C2FBDDB-B8E1-4414-96F9-E696C0F29B3E}"
+	ProjectSection(SolutionItems) = preProject
+		src\logging-service\logging-broker\Dockerfile = src\logging-service\logging-broker\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging-grafana", "logging-grafana", "{A76ACD00-2077-4424-9B4F-E2C78509F7B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging-loki", "logging-loki", "{42C8AA73-20CC-4F77-9260-D93AFA0DBE1E}"
+	ProjectSection(SolutionItems) = preProject
+		src\logging-service\logging-loki\loki-config.yaml = src\logging-service\logging-loki\loki-config.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging-service", "logging-service", "{665F02ED-10BD-44D4-ABA6-59B8552B3E3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging-broker", "logging-broker", "{25FFC562-5A45-4692-AC11-71FFF7E8E5DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingBroker.Application", "src\logging-service\logging-broker\LoggingBroker.Application\LoggingBroker.Application.csproj", "{1B7732A0-96B8-4EB1-8EE0-BDF6F040FE01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingBroker.Domain", "src\logging-service\logging-broker\LoggingBroker.Domain\LoggingBroker.Domain.csproj", "{FBB7041D-A2B7-4144-8D8D-3881FFD6FF28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingBroker.Infrastructure", "src\logging-service\logging-broker\LoggingBroker.Infrastructure\LoggingBroker.Infrastructure.csproj", "{7AD33094-456A-4EF8-9768-012EC3918637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingBroker.WebApi", "src\logging-service\logging-broker\LoggingBroker.WebApi\LoggingBroker.WebApi.csproj", "{F40964C5-D717-4078-8878-F13249B14883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingBrokerWebApi.IntegrationTests", "test\logging-service\logging-broker\LoggingBrokerWebApi.IntegrationTests\LoggingBrokerWebApi.IntegrationTests.csproj", "{2E26E8FA-4682-4681-95CC-E8B4C0E1C848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingBrokerApi.UnitTests", "test\logging-service\logging-broker\LoggingBrokerApi.UnitTests\LoggingBrokerApi.UnitTests.csproj", "{50336AD7-660B-416A-98B7-53E83855982C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "provisioning", "provisioning", "{61F0814E-4730-479A-BADC-16F9DDF63E53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasources", "datasources", "{DFC51297-6A6D-4CF3-9124-95DC0B65F001}"
+	ProjectSection(SolutionItems) = preProject
+		src\logging-service\logging-grafana\provisioning\datasources\datasource.yaml = src\logging-service\logging-grafana\provisioning\datasources\datasource.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{460DEB8C-623C-4BB6-A420-6A52BD12762C}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Postman\LoggingBrokerApi.postman_collection.json = docs\Postman\LoggingBrokerApi.postman_collection.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B7732A0-96B8-4EB1-8EE0-BDF6F040FE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B7732A0-96B8-4EB1-8EE0-BDF6F040FE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B7732A0-96B8-4EB1-8EE0-BDF6F040FE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B7732A0-96B8-4EB1-8EE0-BDF6F040FE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB7041D-A2B7-4144-8D8D-3881FFD6FF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB7041D-A2B7-4144-8D8D-3881FFD6FF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB7041D-A2B7-4144-8D8D-3881FFD6FF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB7041D-A2B7-4144-8D8D-3881FFD6FF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD33094-456A-4EF8-9768-012EC3918637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD33094-456A-4EF8-9768-012EC3918637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD33094-456A-4EF8-9768-012EC3918637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD33094-456A-4EF8-9768-012EC3918637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40964C5-D717-4078-8878-F13249B14883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40964C5-D717-4078-8878-F13249B14883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40964C5-D717-4078-8878-F13249B14883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40964C5-D717-4078-8878-F13249B14883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E26E8FA-4682-4681-95CC-E8B4C0E1C848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E26E8FA-4682-4681-95CC-E8B4C0E1C848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E26E8FA-4682-4681-95CC-E8B4C0E1C848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E26E8FA-4682-4681-95CC-E8B4C0E1C848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50336AD7-660B-416A-98B7-53E83855982C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50336AD7-660B-416A-98B7-53E83855982C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50336AD7-660B-416A-98B7-53E83855982C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50336AD7-660B-416A-98B7-53E83855982C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21A401A7-7AAA-4BE0-B61E-3479CA06761C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5C2FBDDB-B8E1-4414-96F9-E696C0F29B3E} = {21A401A7-7AAA-4BE0-B61E-3479CA06761C}
+		{A76ACD00-2077-4424-9B4F-E2C78509F7B0} = {21A401A7-7AAA-4BE0-B61E-3479CA06761C}
+		{42C8AA73-20CC-4F77-9260-D93AFA0DBE1E} = {21A401A7-7AAA-4BE0-B61E-3479CA06761C}
+		{665F02ED-10BD-44D4-ABA6-59B8552B3E3B} = {E97B9A38-6BB6-44D1-9326-214E34F85BEC}
+		{25FFC562-5A45-4692-AC11-71FFF7E8E5DE} = {665F02ED-10BD-44D4-ABA6-59B8552B3E3B}
+		{1B7732A0-96B8-4EB1-8EE0-BDF6F040FE01} = {5C2FBDDB-B8E1-4414-96F9-E696C0F29B3E}
+		{FBB7041D-A2B7-4144-8D8D-3881FFD6FF28} = {5C2FBDDB-B8E1-4414-96F9-E696C0F29B3E}
+		{7AD33094-456A-4EF8-9768-012EC3918637} = {5C2FBDDB-B8E1-4414-96F9-E696C0F29B3E}
+		{F40964C5-D717-4078-8878-F13249B14883} = {5C2FBDDB-B8E1-4414-96F9-E696C0F29B3E}
+		{2E26E8FA-4682-4681-95CC-E8B4C0E1C848} = {25FFC562-5A45-4692-AC11-71FFF7E8E5DE}
+		{50336AD7-660B-416A-98B7-53E83855982C} = {25FFC562-5A45-4692-AC11-71FFF7E8E5DE}
+		{61F0814E-4730-479A-BADC-16F9DDF63E53} = {A76ACD00-2077-4424-9B4F-E2C78509F7B0}
+		{DFC51297-6A6D-4CF3-9124-95DC0B65F001} = {61F0814E-4730-479A-BADC-16F9DDF63E53}
+		{460DEB8C-623C-4BB6-A420-6A52BD12762C} = {3359E346-5E7B-4B0C-B342-B20F7C3149EC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82F2F1CA-17A9-4DCD-BE2A-D57B9A3D4A3A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "02dd05be-9863-4801-b549-8222b4acbd77",
+		"name": "LoggingBroker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34483391"
+	},
+	"item": [
+		{
+			"name": "Logs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Source\": \"test-service1\",\r\n  \"LogLevel\": \"info\",\r\n  \"Message\": \"Test message1\",\r\n  \"Parameters\": {\r\n    \"user\": \"test-user1\",\r\n    \"action\": \"test action1\"\r\n  },\r\n  \"EventUnixTimeMs\": 1742498360601\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contains=test",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?contains=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "contains",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contains=test2|only",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?contains=test|only",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "contains",
+							"value": "test2|only"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "param_user=test1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?param_user=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "param_user",
+							"value": "test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "param_action=test1|test2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?param_action=test1|test2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "param_action",
+							"value": "test1|test2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sources=test2-service",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?sources=test1-service",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "sources",
+							"value": "test2-service"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sources=test1-service|test2-service",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?sources=test1-service|test2-service",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "sources",
+							"value": "test1-service|test2-service"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "levels=waning",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?levels=warning",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "levels",
+							"value": "warning"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "levels=info|warning",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?levels=info|warning",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "levels",
+							"value": "info|warning"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "startTime&endTime",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?startTimeMs=1672531200000&endTimeMs=1672617600000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "startTimeMs",
+							"value": "1672531200000"
+						},
+						{
+							"key": "endTimeMs",
+							"value": "1672617600000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Parameters",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3012/api/v1/logs?contains=test&param_user=user1&param_action=click&sources=test-service&levels=warning&startTimeMs=1672531200000&endTimeMs=1672617600000&caseInsensitive=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"v1",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "contains",
+							"value": "test"
+						},
+						{
+							"key": "param_user",
+							"value": "user1"
+						},
+						{
+							"key": "param_action",
+							"value": "click"
+						},
+						{
+							"key": "sources",
+							"value": "test-service"
+						},
+						{
+							"key": "levels",
+							"value": "warning"
+						},
+						{
+							"key": "startTimeMs",
+							"value": "1672531200000"
+						},
+						{
+							"key": "endTimeMs",
+							"value": "1672617600000"
+						},
+						{
+							"key": "caseInsensitive",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
